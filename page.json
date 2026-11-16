@@ -1,0 +1,113 @@
+{
+  "data": [
+    {
+      "id": "7mpbiuy19a",
+      "name": {
+        "tr": "Süreç",
+        "en": "Process",
+        "ar": "العملية"
+      },
+      "description": {
+        "tr": "Haftalık iş takvimi ve kat planına göre banyo tipleri.",
+        "en": "The weekly work schedule and bathroom types by floor plan.",
+        "ar": "جدول العمل الأسبوعي وأنواع الحمّامات حسب المخطط."
+      },
+      "path": "hizmetler",
+      "icon": "event_note",
+      "category": "",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [
+          "jlrhsr",
+          "n37dzg"
+        ],
+        "footer": []
+      },
+      "index": 0
+    },
+    {
+      "name": {
+        "tr": "Atölye",
+        "en": "Workshop",
+        "ar": "الورشة"
+      },
+      "status": "play",
+      "id": "hakkimizda",
+      "path": "hakkimizda",
+      "category": "",
+      "url": "",
+      "index": 1,
+      "icon": "info",
+      "desing": {
+        "header": [],
+        "body": [
+          "b7mpgv",
+          "dnghtn"
+        ],
+        "footer": []
+      },
+      "pathnext": "",
+      "description": {
+        "tr": "Atölyenin katman katman tarihi ve seçili projeler.",
+        "en": "The workshop’s history in layers and selected projects.",
+        "ar": "تاريخ الورشة طبقةً طبقة ومشاريع مختارة."
+      }
+    },
+    {
+      "id": "chk4u4luhp",
+      "name": {
+        "tr": "Projeler",
+        "en": "Projects",
+        "ar": "المشاريع"
+      },
+      "description": {
+        "tr": "Çizimden teslime proje arşivi; görseller temsilîdir.",
+        "en": "A project archive from drawing to handover; images are representative.",
+        "ar": "أرشيف المشاريع من الرسم إلى التسليم؛ الصور تمثيلية."
+      },
+      "path": "referanslar",
+      "icon": "photo_library",
+      "category": "",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [
+          "yc0ra4",
+          "dnghtn"
+        ],
+        "footer": []
+      },
+      "index": 2
+    },
+    {
+      "name": {
+        "tr": "Teklif",
+        "en": "Quote",
+        "ar": "العرض"
+      },
+      "status": "play",
+      "id": "iletisim",
+      "path": "iletisim",
+      "category": "",
+      "url": "",
+      "index": 3,
+      "icon": "request_quote",
+      "desing": {
+        "header": [],
+        "body": [
+          "61ipai",
+          "k8mp01"
+        ],
+        "footer": []
+      },
+      "pathnext": "",
+      "description": {
+        "tr": "Üç adımlı teklif formu, adres ve atölye saatleri.",
+        "en": "A three-step quote form, address and workshop hours.",
+        "ar": "نموذج عرض من ثلاث خطوات والعنوان وساعات الورشة."
+      }
+    }
+  ],
+  "desc": []
+}

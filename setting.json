@@ -1,0 +1,54 @@
+{
+  "order": false,
+  "user": false,
+  "description": {
+    "tr": "Duru Banyo: Eskişehir’de banyo yenileme — üç adımlı teklif formu, haftalık iş takvimi, kat planına göre banyo tipi ve proje arşivi. Demo site; içerik kurgusaldır.",
+    "en": "Duru Bathrooms: bathroom renovation in Eskisehir — a three-step quote form, a weekly work schedule, bathroom types by floor plan and a project archive. Demo site; content is fictional.",
+    "ar": "دورو للحمّامات: تجديد الحمّامات في إسكي شهير — نموذج عرض سعر من ثلاث خطوات وجدول عمل أسبوعي وأنواع الحمّامات حسب المخطط وأرشيف المشاريع. موقع تجريبي؛ المحتوى افتراضي."
+  },
+  "keyword": {
+    "tr": "banyo yenileme, banyo teklifi, duş alanı, seramik, tesisat, Eskişehir",
+    "en": "bathroom renovation, bathroom quote, shower area, tiling, plumbing, Eskisehir",
+    "ar": "تجديد الحمّام، عرض سعر للحمّام، منطقة الدش، بلاط، تمديدات صحية، إسكي شهير"
+  },
+  "category": "Kurumsal",
+  "name": "Duru Banyo",
+  "domain": "banyo-3.webyapar.com",
+  "langs": {
+    "tr": true,
+    "en": true,
+    "ar": true,
+    "de": false,
+    "ru": false,
+    "es": false,
+    "fr": false,
+    "it": false,
+    "ja": false,
+    "zh": false,
+    "ko": false,
+    "pt": false
+  },
+  "logo": "logo.png",
+  "multi": false,
+  "publishMode": "static",
+  "font": {
+    "body": "nunito",
+    "heading": "rubik",
+    "ar": {
+      "body": "ibm-plex-sans-arabic",
+      "heading": "noto-kufi-arabic"
+    }
+  },
+  "colorScheme": "auto",
+  "theme_color": "#5062C8",
+  "seo": {
+    "noindex": true
+  },
+  "cssTokens": {
+    "--mx-radius-sm": "8px",
+    "--mx-radius-md": "14px",
+    "--mx-radius-lg": "20px",
+    "--mx-radius-xl": "27px"
+  },
+  "icon": "icon.png"
+}

@@ -1,0 +1,271 @@
+<section class="modulex-iletisim-adim-form{{fbsinif}}" {{fbetiket}}>
+  <div class="modulex-iletisim-adim-form-ic">
+    {{fbbas}}
+    {{fbgovde}}
+  </div>
+</section>
+
+<style>
+  /* iletisim-adim-form — Ailedeki tüm form modülleri (bolunmus-form · koyu-form · form-sekme · gizli-gorusme …) alanları tek ekranda basar; bu modül SİHİRBAZ: fieldset adımları, adım başına checkValidity, --oran ile dolan ilerleme çizgisi, radyo karo → select[name=topic] eşlemesi ve son adımda textContent özeti (adimForm). */
+  .modulex-iletisim-adim-form { box-sizing: border-box; width: 100%; padding: --bosluk-- 20px; background: --bg--; color: --text--; font-size: 1rem; line-height: 1.6; font-family: var(--mx-font-sans, inherit); overflow-wrap: break-word; }
+  .modulex-iletisim-adim-form *, .modulex-iletisim-adim-form *::before, .modulex-iletisim-adim-form *::after { box-sizing: border-box; }
+  /* ham/css.css «* { font-size: 14px }» kalıtımı keser — modül içinde boyut üstten gelsin (ikon yazı tipi hariç) */
+  .modulex-iletisim-adim-form :where(*:not(.material-symbols-outlined)) { font-size: inherit; }
+  /* aynı «*» kuralı font-weight 400 · line-height 1.2 · font-family de basar — modül içinde kalıtım */
+  .modulex-iletisim-adim-form :where(*:not(.material-symbols-outlined)) { font-weight: inherit; line-height: inherit; font-family: inherit; }
+  .modulex-iletisim-adim-form :where(h2, h3, h4, p, ul, ol, li, figure, blockquote, dl, dd) { margin: 0; }
+  .modulex-iletisim-adim-form :where(ul, ol) { padding: 0; list-style: none; }
+  .modulex-iletisim-adim-form img { display: block; max-width: 100%; }
+  /* <img width height> öznitelik yüksekliği CSS aspect-ratio'yu ezer — sıfır özgüllükle auto (modül sınıfının height'ı yine kazanır) */
+  :where(.modulex-iletisim-adim-form) img { height: auto; }
+  .modulex-iletisim-adim-form [hidden] { display: none !important; }
+  .modulex-iletisim-adim-form :where(a, button, summary, [data-cevir]) { cursor: pointer; }
+  .modulex-iletisim-adim-form :where(a, button, summary, [tabindex]):focus-visible { outline: 3px solid --accent--; outline-offset: 3px; }
+  .modulex-iletisim-adim-form-ic { max-width: --max--; margin-inline: auto; }
+  .modulex-iletisim-adim-form-bas { display: grid; gap: 12px; margin-block-end: clamp(32px, 4vw, 52px); }
+  .modulex-iletisim-adim-form--bassiz .modulex-iletisim-adim-form-bas { display: none; }
+  .modulex-iletisim-adim-form-ust { color: --accentInk--; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .modulex-iletisim-adim-form-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.8rem, 3.4vw, 2.8rem); font-weight: 750; letter-spacing: -0.025em; line-height: 1.1; }
+  .modulex-iletisim-adim-form-metin { color: --muted--; font-size: 1.05rem; line-height: 1.7; }
+  .modulex-iletisim-adim-form-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-block-start: 8px; }
+  .modulex-iletisim-adim-form-dugme { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 22px; border: 2px solid --accent--; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; }
+  .modulex-iletisim-adim-form-dugme:hover { transform: translateY(-2px); }
+  .modulex-iletisim-adim-form-dugme--ikincil { background: transparent; color: --text--; border-color: --cizgi--; }
+  .modulex-iletisim-adim-form-dugme--ikincil:hover { border-color: --accent--; }
+  .modulex-iletisim-adim-form-dugme .material-symbols-outlined { font-size: 20px; }
+
+  .modulex-iletisim-adim-form-sihirbaz { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: clamp(28px, 5vw, 72px); align-items: start; }
+  .modulex-iletisim-adim-form-sihirbaz--tek { grid-template-columns: minmax(0, 1fr); }
+  .modulex-iletisim-adim-form-yan { display: grid; gap: 16px; min-width: 0; }
+  .modulex-iletisim-adim-form-arows { display: grid; gap: 10px; margin-block-start: 10px; }
+  .modulex-iletisim-adim-form-arow { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border: 1px dashed --cizgi--; border-radius: 12px; transition: border-color 0.2s ease, background 0.2s ease; }
+  .modulex-iletisim-adim-form-arow:hover { border-color: --accent--; background: color-mix(in srgb, --accent-- 5%, transparent); }
+  .modulex-iletisim-adim-form-aik { flex: none; color: --accentInk--; font-size: 22px; }
+  .modulex-iletisim-adim-form-agov { display: grid; min-width: 0; }
+  .modulex-iletisim-adim-form-aform { display: grid; gap: 22px; min-width: 0; padding: clamp(22px, 4vw, 40px); border-radius: --yuvarlak--; background: --kartBg--; box-shadow: 0 30px 70px -44px color-mix(in srgb, --text-- 55%, transparent); }
+  .modulex-iletisim-adim-form-abas { font-size: 1.25rem; font-weight: 750; }
+  .modulex-iletisim-adim-form-ilerleme { position: relative; display: flex; justify-content: space-between; gap: 8px; }
+  .modulex-iletisim-adim-form:not(.modulex-iletisim-adim-form--ajs) .modulex-iletisim-adim-form-ilerleme { display: none; }
+  .modulex-iletisim-adim-form-ilerleme::before, .modulex-iletisim-adim-form-ilerleme::after { content: ""; position: absolute; inset-block-start: 21px; inset-inline-start: 22px; block-size: 3px; border-radius: 3px; }
+  .modulex-iletisim-adim-form-ilerleme::before { inset-inline-end: 22px; background: --cizgi--; }
+  .modulex-iletisim-adim-form-ilerleme::after { inline-size: calc((100% - 44px) * var(--oran, 0)); background: --accent--; transition: inline-size 0.5s ease; }
+  .modulex-iletisim-adim-form-ia { position: relative; z-index: 1; display: grid; justify-items: center; gap: 6px; min-width: 0; text-align: center; }
+  .modulex-iletisim-adim-form-inum { display: inline-grid; place-items: center; inline-size: 44px; block-size: 44px; border: 2px solid --cizgi--; border-radius: 50%; background: --kartBg--; color: --muted--; transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.3s ease; }
+  .modulex-iletisim-adim-form-inum .material-symbols-outlined { font-size: 22px; }
+  .modulex-iletisim-adim-form-iad { color: --muted--; font-size: 0.82rem; font-weight: 700; }
+  .modulex-iletisim-adim-form-ia.modulex-iletisim-adim-form--simdi .modulex-iletisim-adim-form-inum { border-color: --accent--; color: --accentInk--; transform: scale(1.1); }
+  .modulex-iletisim-adim-form-ia.modulex-iletisim-adim-form--simdi .modulex-iletisim-adim-form-iad { color: --text--; }
+  .modulex-iletisim-adim-form-ia.modulex-iletisim-adim-form--tamam .modulex-iletisim-adim-form-inum { border-color: --accent--; background: --accent--; color: --accentText--; }
+  .modulex-iletisim-adim-form-adim { display: grid; gap: 14px; min-width: 0; margin: 0; padding: 0; border: 0; animation: modulex-iletisim-adim-form-kay 0.4s ease both; }
+  @keyframes modulex-iletisim-adim-form-kay { from { opacity: 0; transform: translateX(18px); } to { opacity: 1; transform: none; } }
+  @keyframes modulex-iletisim-adim-form-kayr { from { opacity: 0; transform: translateX(-18px); } to { opacity: 1; transform: none; } }
+  [dir="rtl"] .modulex-iletisim-adim-form-adim, :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-iletisim-adim-form-adim { animation-name: modulex-iletisim-adim-form-kayr; }
+  .modulex-iletisim-adim-form:not(.modulex-iletisim-adim-form--ajs) .modulex-iletisim-adim-form-adim + .modulex-iletisim-adim-form-adim { padding-block-start: 18px; border-block-start: 1px solid --cizgi--; }
+  .modulex-iletisim-adim-form-aleg { display: flex; align-items: baseline; gap: 10px; margin-block-end: 6px; padding: 0; font-size: 1.15rem; font-weight: 750; }
+  .modulex-iletisim-adim-form-asira { color: --accentInk--; font-size: 0.85rem; font-variant-numeric: tabular-nums; }
+  .modulex-iletisim-adim-form-sat2 { display: grid; gap: 6px; }
+  .modulex-iletisim-adim-form-setk { font-size: 0.9rem; font-weight: 650; }
+  .modulex-iletisim-adim-form-sgir { inline-size: 100%; min-height: 50px; padding: 12px 16px; border: 1.5px solid --cizgi--; border-radius: 14px; background: --bg--; color: inherit; font: inherit; transition: border-color 0.2s ease, box-shadow 0.2s ease; }
+  textarea.modulex-iletisim-adim-form-sgir { min-height: 140px; resize: vertical; }
+  .modulex-iletisim-adim-form-sgir:focus { outline: none; border-color: --accent--; box-shadow: 0 0 0 4px color-mix(in srgb, --accent-- 22%, transparent); }
+  .modulex-iletisim-adim-form-karolar { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 170px), 1fr)); gap: 10px; }
+  .modulex-iletisim-adim-form:not(.modulex-iletisim-adim-form--ajs) .modulex-iletisim-adim-form-karolar { display: none; }
+  .modulex-iletisim-adim-form--ajs .modulex-iletisim-adim-form-sat2--secim { display: none; }
+  .modulex-iletisim-adim-form-karo { position: relative; display: flex; align-items: center; min-height: 64px; padding: 14px 16px; border: 1.5px solid --cizgi--; border-radius: 14px; background: --bg--; font-weight: 650; transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease; }
+  .modulex-iletisim-adim-form-karo:hover { transform: translateY(-2px); border-color: color-mix(in srgb, --accent-- 60%, transparent); }
+  .modulex-iletisim-adim-form-karo input { position: absolute; inset: 0; margin: 0; opacity: 0; cursor: pointer; }
+  .modulex-iletisim-adim-form-karo:has(input:checked) { border-color: --accent--; background: color-mix(in srgb, --accent-- 12%, --bg--); }
+  .modulex-iletisim-adim-form-karo:has(input:focus-visible) { outline: 3px solid --accent--; outline-offset: 2px; }
+  .modulex-iletisim-adim-form-kyaz { min-width: 0; overflow-wrap: anywhere; }
+  .modulex-iletisim-adim-form-aonay { display: flex; gap: 10px; align-items: flex-start; font-size: 0.92rem; }
+  .modulex-iletisim-adim-form-aonay input { flex: none; inline-size: 20px; block-size: 20px; margin-block-start: 2px; accent-color: --accent--; cursor: pointer; }
+  .modulex-iletisim-adim-form-aonay a { color: inherit; font-weight: 700; text-underline-offset: 3px; }
+  .modulex-iletisim-adim-form-ozet { display: grid; gap: 8px; padding: 14px 16px; border-inline-start: 4px solid --accent--; border-radius: 10px; background: color-mix(in srgb, --accent-- 6%, --bg--); }
+  .modulex-iletisim-adim-form-ozbas { font-size: 0.85rem; font-weight: 750; letter-spacing: 0.08em; text-transform: uppercase; }
+  .modulex-iletisim-adim-form-ozliste { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 4px 14px; margin: 0; font-size: 0.92rem; }
+  .modulex-iletisim-adim-form-ozliste dt { color: --muted--; }
+  .modulex-iletisim-adim-form-ozliste dd { margin: 0; font-weight: 650; overflow-wrap: anywhere; }
+  .modulex-iletisim-adim-form-gez { display: flex; flex-wrap: wrap; gap: 12px; }
+  .modulex-iletisim-adim-form-gez .modulex-iletisim-adim-form-dugme { font: inherit; font-weight: 700; }
+  .modulex-iletisim-adim-form-gez .modulex-iletisim-adim-form-ileri, .modulex-iletisim-adim-form-gez .modulex-iletisim-adim-form-gonder { margin-inline-start: auto; }
+  @media (max-width: 1024px) {
+    .modulex-iletisim-adim-form-sihirbaz { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .modulex-iletisim-adim-form-iad { display: none; }
+    .modulex-iletisim-adim-form-ozliste { grid-template-columns: minmax(0, 1fr); }
+    .modulex-iletisim-adim-form-gez .modulex-iletisim-adim-form-dugme { flex: 1 1 auto; justify-content: center; }
+  }
+  .modulex-iletisim-adim-form-kikon { flex: none; display: inline-grid; place-items: center; width: 48px; height: 48px; border-radius: 14px; background: color-mix(in srgb, --accent-- 14%, transparent); color: --accentInk--; font-size: 24px; }
+  .modulex-iletisim-adim-form-ketiket { display: block; color: --muted--; font-size: 0.82rem; font-weight: 650; letter-spacing: 0.06em; text-transform: uppercase; }
+  .modulex-iletisim-adim-form-deger { color: inherit; font-weight: 650; text-decoration: none; overflow-wrap: anywhere; transition: color 0.2s ease; }
+  a.modulex-iletisim-adim-form-deger:hover { color: --accentInk--; text-decoration: underline; text-underline-offset: 4px; }
+  .modulex-iletisim-adim-form-eylem { display: inline-flex; align-items: center; gap: 6px; color: --accentInk--; font-weight: 700; text-decoration: none; transition: gap 0.2s ease; }
+  .modulex-iletisim-adim-form-eylem:hover { gap: 10px; }
+  .modulex-iletisim-adim-form-eylem .material-symbols-outlined { font-size: 18px; }
+  .modulex-iletisim-adim-form-kopya { display: none; align-items: center; gap: 6px; min-height: 36px; padding: 6px 12px; border: 1px solid --cizgi--; border-radius: 999px; background: transparent; color: --text--; font: inherit; font-size: 0.85rem; font-weight: 650; transition: border-color 0.2s ease, background 0.2s ease; }
+  .modulex-iletisim-adim-form--kjs .modulex-iletisim-adim-form-kopya { display: inline-flex; }
+  .modulex-iletisim-adim-form-kopya:hover { border-color: --accent--; }
+  .modulex-iletisim-adim-form-kopya .material-symbols-outlined { font-size: 18px; }
+  .modulex-iletisim-adim-form--kopyalandi { background: color-mix(in srgb, --accent-- 14%, transparent); }
+  .modulex-iletisim-adim-form-sosyal { display: grid; gap: 10px; }
+  .modulex-iletisim-adim-form-sbaslik { color: --muted--; font-size: 0.9rem; font-weight: 650; }
+  .modulex-iletisim-adim-form-sliste { display: flex; flex-wrap: wrap; gap: 8px; }
+  .modulex-iletisim-adim-form-cip { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 8px 14px; border: 1px solid --cizgi--; border-radius: 999px; color: inherit; font-weight: 650; text-decoration: none; transition: border-color 0.2s ease, transform 0.2s ease; }
+  .modulex-iletisim-adim-form-cip:hover { border-color: --accent--; transform: translateY(-2px); }
+  .modulex-iletisim-adim-form-cikon { font-size: 18px; }
+  .modulex-iletisim-adim-form-harita { position: relative; overflow: hidden; min-height: 280px; border-radius: --yuvarlak--; background: --kartBg--; }
+  .modulex-iletisim-adim-form-iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .modulex-iletisim-adim-form-hdesen { position: absolute; inset: 0; display: grid; place-items: center; background-color: color-mix(in srgb, --accent-- 8%, --kartBg--); background-image: linear-gradient(color-mix(in srgb, --text-- 7%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, --text-- 7%, transparent) 1px, transparent 1px), radial-gradient(circle at 30% 40%, color-mix(in srgb, --accent-- 18%, transparent) 0 18%, transparent 19%); background-size: 36px 36px, 36px 36px, 100% 100%; }
+  .modulex-iletisim-adim-form-pin { color: --accentInk--; font-size: 56px; animation: modulex-iletisim-adim-form-zipla 2.4s ease-in-out infinite; }
+  @keyframes modulex-iletisim-adim-form-zipla { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  .modulex-iletisim-adim-form-hyol { position: absolute; inset-block-end: 16px; inset-inline-start: 16px; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 10px 16px; border-radius: 999px; background: --bg--; color: --text--; font-weight: 700; text-decoration: none; box-shadow: 0 6px 20px color-mix(in srgb, --text-- 16%, transparent); transition: transform 0.2s ease; }
+  .modulex-iletisim-adim-form-hyol:hover { transform: translateY(-2px); }
+  .modulex-iletisim-adim-form-hyol .material-symbols-outlined { font-size: 18px; color: --accentInk--; }
+
+  .modulex-iletisim-adim-form-form { display: grid; gap: 18px; }
+  .modulex-iletisim-adim-form-fbaslik { font-size: 1.3rem; font-weight: 750; }
+  .modulex-iletisim-adim-form-alanlar { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .modulex-iletisim-adim-form-alan { display: flex; flex-direction: column-reverse; gap: 6px; }
+  .modulex-iletisim-adim-form-alan--genis { grid-column: 1 / -1; }
+  .modulex-iletisim-adim-form-etiket { font-size: 0.9rem; font-weight: 650; }
+  .modulex-iletisim-adim-form-girdi { width: 100%; min-height: 48px; padding: 12px 14px; border: 1px solid color-mix(in srgb, currentColor 26%, transparent); border-radius: 12px; background: color-mix(in srgb, currentColor 4%, transparent); color: inherit; font: inherit; transition: border-color 0.2s ease, box-shadow 0.2s ease; }
+  textarea.modulex-iletisim-adim-form-girdi { min-height: 132px; resize: vertical; }
+  .modulex-iletisim-adim-form-girdi:focus { outline: none; border-color: --accent--; box-shadow: 0 0 0 3px color-mix(in srgb, --accent-- 28%, transparent); }
+  .modulex-iletisim-adim-form-secim { cursor: pointer; }
+  .modulex-iletisim-adim-form-secim option { background: --bg--; color: --text--; }
+  .modulex-iletisim-adim-form-onay { display: flex; gap: 10px; align-items: flex-start; font-size: 0.92rem; }
+  .modulex-iletisim-adim-form-onay input { flex: none; width: 20px; height: 20px; margin-block-start: 2px; accent-color: --accent--; cursor: pointer; }
+  .modulex-iletisim-adim-form-onay a { color: inherit; font-weight: 700; text-underline-offset: 3px; }
+  .modulex-iletisim-adim-form-gonder { justify-self: start; font: inherit; font-weight: 700; cursor: pointer; }
+  .modulex-iletisim-adim-form-gonder:disabled { opacity: 0.6; cursor: progress; }
+  .modulex-iletisim-adim-form-durum { min-height: 1.5em; font-size: 0.95rem; font-weight: 650; }
+  .modulex-iletisim-adim-form-durum:empty { display: none; }
+  .modulex-iletisim-adim-form-durum--hata { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+  .modulex-iletisim-adim-form-bal { position: absolute; inset-inline-start: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  @media (max-width: 768px) {
+    .modulex-iletisim-adim-form-alanlar { grid-template-columns: minmax(0, 1fr); }
+    .modulex-iletisim-adim-form-gonder { justify-self: stretch; justify-content: center; }
+  }
+
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-iletisim-adim-form :is(.modulex-iletisim-adim-form-baslik, .modulex-iletisim-adim-form-ust, h3, h4, strong) { letter-spacing: 0; }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-iletisim-adim-form-baslik { line-height: 1.35; }
+  @media (max-width: 768px) {
+    .modulex-iletisim-adim-form { padding-inline: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-iletisim-adim-form *, .modulex-iletisim-adim-form *::before, .modulex-iletisim-adim-form *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+<script>
+  (() => {
+    const P = "modulex-iletisim-adim-form";
+    const az = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    const adimForm = (s, P) => {
+        const f = s.querySelector("form[data-fb-form]");
+        if (!f) return;
+        const A = [...f.querySelectorAll("[data-adim]")];
+        if (A.length < 2) return;
+        s.classList.add(P + "--ajs");
+        const I = [...s.querySelectorAll("[data-adim-isaret]")];
+        const geri = f.querySelector('[data-adim-git="-1"]');
+        const ileri = f.querySelector('[data-adim-git="1"]');
+        const gonder = f.querySelector("[type=submit]");
+        const sec = f.querySelector("select[name=topic]");
+        const oz = f.querySelector("[data-adim-ozet]");
+        let n = 0;
+        const ozet = () => {
+          if (!oz) return;
+          const dl = oz.querySelector("dl");
+          if (!dl) return;
+          dl.replaceChildren();
+          ["topic", "name", "email", "phone"].forEach((ad) => {
+            const e = f.elements.namedItem(ad);
+            if (!e || !("value" in e)) return;
+            const v = e.tagName === "SELECT" ? (e.selectedIndex > 0 ? e.options[e.selectedIndex].text.trim() : "") : String(e.value).trim();
+            if (!v) return;
+            const l = e.id ? f.querySelector(`label[for="${e.id}"]`) : null;
+            const dt = document.createElement("dt");
+            dt.textContent = l ? l.textContent.trim() : ad;
+            const dd = document.createElement("dd");
+            dd.textContent = v;
+            dd.dir = "auto";
+            dl.append(dt, dd);
+          });
+          oz.hidden = !dl.children.length;
+        };
+        const kur = (odak) => {
+          A.forEach((a, i) => { a.hidden = i !== n; });
+          I.forEach((x, i) => { x.classList.toggle(P + "--tamam", i < n); x.classList.toggle(P + "--simdi", i === n); });
+          f.style.setProperty("--oran", String(n / (A.length - 1)));
+          if (geri) geri.hidden = n === 0;
+          if (ileri) ileri.hidden = n === A.length - 1;
+          if (gonder) gonder.hidden = n !== A.length - 1;
+          if (n === A.length - 1) ozet();
+          if (odak) {
+            const g = A[n].querySelector("input, textarea, select");
+            if (g) g.focus();
+          }
+        };
+        const gecerli = () => {
+          for (const e of A[n].querySelectorAll("input, select, textarea")) if (!e.checkValidity()) { e.reportValidity(); return false; }
+          return true;
+        };
+        const sonraki = () => { if (gecerli()) { n += 1; kur(true); } };
+        if (ileri) ileri.addEventListener("click", sonraki);
+        if (geri) geri.addEventListener("click", () => { n = Math.max(0, n - 1); kur(true); });
+        f.addEventListener("submit", (e) => {
+          if (n >= A.length - 1) return;
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          sonraki();
+        });
+        f.querySelectorAll("[data-adim-konu]").forEach((r) => r.addEventListener("change", () => {
+          if (!sec) return;
+          const i = [...sec.options].findIndex((o) => o.text.trim() === r.value);
+          sec.selectedIndex = Math.max(0, i);
+        }));
+        f.addEventListener("reset", () => setTimeout(() => { n = 0; kur(false); }, 0));
+        kur(false);
+      };
+    const form = (s, P) => {
+        s.querySelectorAll("form[data-fb-form]").forEach((f) => {
+          const durum = f.querySelector("[role=status]");
+          const yaz = (m, hata) => { if (durum) { durum.textContent = m || ""; durum.classList.toggle(P + "-durum--hata", !!hata); } };
+          let t0 = Date.now();
+          const al = (ad) => { const e = f.elements.namedItem(ad); return e && "value" in e ? String(e.value).trim() : ""; };
+          const etiket = (ad) => { const e = f.elements.namedItem(ad); const l = e && e.id ? f.querySelector(`label[for="${e.id}"]`) : null; return l ? l.textContent.trim() : ad; };
+          const konuMetin = () => { const e = f.elements.namedItem("topic"); return e && e.selectedIndex > 0 ? e.options[e.selectedIndex].text.trim() : ""; };
+          f.addEventListener("submit", (e) => {
+            e.preventDefault();
+            if (!f.checkValidity()) { f.reportValidity(); return; }
+            if (al("website")) return;
+            const govde = ["name", "email", "phone"].filter(al).map((k) => `${etiket(k)}: ${al(k)}`)
+              .concat(konuMetin() ? [`${etiket("topic")}: ${konuMetin()}`] : [], al("message") ? ["", al("message")] : []).join("\n");
+            const d = f.dataset;
+            if (d.action) {
+              const b = f.querySelector("[type=submit]");
+              if (b) b.disabled = true;
+              const yuk = { name: al("name"), email: al("email"), phone: al("phone"), topic: konuMetin(), message: al("message"), kvkk: true, lang: document.documentElement.lang || "", page: location.pathname, website: al("website"), t: Date.now() - t0 };
+              fetch(d.action, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(yuk) })
+                .then((r) => r.json().catch(() => ({})).then((j) => r.ok && j && j.ok !== false))
+                .then((ok) => { if (b) b.disabled = false; yaz(ok ? d.ok : d.hata, !ok); if (ok) { f.reset(); t0 = Date.now(); } })
+                .catch(() => { if (b) b.disabled = false; yaz(d.hata, true); });
+              return;
+            }
+            if (d.gonderim === "whatsapp" && d.wa) { window.open(`https://wa.me/${d.wa}?text=${encodeURIComponent(govde)}`, "_blank", "noopener"); return; }
+            if (d.eposta) {
+              const konu = [d.konu || "", konuMetin()].filter(Boolean).join(" - ");
+              location.href = `mailto:${d.eposta}?subject=${encodeURIComponent(konu)}&body=${encodeURIComponent(govde.replace(/\n/g, "\r\n"))}`;
+            }
+          });
+        });
+      };
+    document.querySelectorAll("." + P).forEach((s) => {
+      if (s.dataset.fbHazir) return;
+      s.dataset.fbHazir = "1";
+      adimForm(s, P, az);
+      form(s, P, az);
+    });
+  })();
+</script>

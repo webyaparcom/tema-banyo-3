@@ -1,0 +1,40 @@
+{
+  "id": "chk4u4luhp",
+  "name": {
+    "tr": "Projeler",
+    "en": "Projects",
+    "ar": "المشاريع"
+  },
+  "description": {
+    "tr": "Çizimden teslime proje arşivi; görseller temsilîdir.",
+    "en": "A project archive from drawing to handover; images are representative.",
+    "ar": "أرشيف المشاريع من الرسم إلى التسليم؛ الصور تمثيلية."
+  },
+  "keyword": {
+    "tr": "proje, banyo yenileme",
+    "en": "project, bathroom renovation",
+    "ar": "مشروع، تجديد حمّام"
+  },
+  "path": "referanslar",
+  "icon": "photo_library",
+  "category": "",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [
+      "yc0ra4",
+      "dnghtn"
+    ],
+    "footer": []
+  },
+  "index": 2,
+  "url": "",
+  "text": {},
+  "title": {
+    "tr": "Projeler",
+    "en": "Projects",
+    "ar": "المشاريع"
+  },
+  "date": "2026-11-16T20:21:38.144Z",
+  "update": "2026-11-16T20:41:27.208Z"
+}

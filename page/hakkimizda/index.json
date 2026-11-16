@@ -1,0 +1,47 @@
+{
+  "name": {
+    "tr": "Atölye",
+    "en": "Workshop",
+    "ar": "الورشة"
+  },
+  "status": "play",
+  "category": "",
+  "id": "hakkimizda",
+  "url": "",
+  "path": "hakkimizda",
+  "index": 1,
+  "icon": "info",
+  "desing": {
+    "header": [],
+    "body": [
+      "b7mpgv",
+      "dnghtn"
+    ],
+    "footer": []
+  },
+  "pathnext": "",
+  "description": {
+    "tr": "Atölyenin katman katman tarihi ve seçili projeler.",
+    "en": "The workshop’s history in layers and selected projects.",
+    "ar": "تاريخ الورشة طبقةً طبقة ومشاريع مختارة."
+  },
+  "spot": {
+    "tr": "",
+    "en": "",
+    "ar": ""
+  },
+  "desc": {},
+  "title": {
+    "tr": "Atölye",
+    "en": "Workshop",
+    "ar": "الورشة"
+  },
+  "keyword": {
+    "tr": "hakkımızda",
+    "en": "about",
+    "ar": "من نحن"
+  },
+  "text": {},
+  "update": "2026-11-16T20:41:27.204Z",
+  "date": "2026-10-30"
+}

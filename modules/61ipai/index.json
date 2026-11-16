@@ -1,0 +1,57 @@
+{
+  "name": "İletişim Adım Form — konu → bilgiler → mesaj; ikonlu ilerleme çubuğu ve son adımda özet",
+  "description": "Yanda başlık ve kesikli çerçeveli kanal satırları; öbür yanda adımlı form kartı: üstte ikonlu adım göstergesi ve dolan çubuk, (konu listesi varsa) 1) konu karoları, 2) ad · e-posta · telefon, 3) mesaj + onay ve girilenlerin özeti. İleri düğmesi o adımı doğrular, Enter son adıma dek ileri götürür. JS yoksa adımlar alt alta, konu açılır liste. Ailedeki tüm form modülleri (bolunmus-form · koyu-form · form-sekme · gizli-gorusme …) alanları tek ekranda basar; bu modül SİHİRBAZ: fieldset adımları, adım başına checkValidity, --oran ile dolan ilerleme çizgisi, radyo karo → select[name=topic] eşlemesi ve son adımda textContent özeti (adimForm). Kanallar desing'den (adres · telefon · WhatsApp · e-posta · saat) + data satırları; etiketler dil sözlüğü, renkler desing + var(--mx-site-*), mantıksal CSS → RTL. Kanal yoksa blok basılmaz.",
+  "version": "1.0.0",
+  "icon": "linear_scale",
+  "category": "contact",
+  "subCategory": "step-form",
+  "tags": [
+    "contact",
+    "form",
+    "wizard",
+    "steps",
+    "interactive",
+    "rtl",
+    "fabrika"
+  ],
+  "desing": {
+    "max": "1200px",
+    "bosluk": "clamp(56px, 8vw, 104px)",
+    "yuvarlak": "18px",
+    "ust": "",
+    "baslik": "",
+    "metin": "",
+    "adres": "",
+    "telefon": "",
+    "eposta": "",
+    "whatsapp": "",
+    "saat": "",
+    "haritaUrl": "",
+    "haritaGomme": "",
+    "waMesaj": "",
+    "bg": "var(--mx-site-surface, #f6f7f9)",
+    "text": "var(--mx-site-text, #111318)",
+    "muted": "color-mix(in srgb, var(--mx-site-text, #111318) 70%, var(--mx-site-surface, #f6f7f9))",
+    "kartBg": "var(--mx-site-bg, #ffffff)",
+    "cizgi": "color-mix(in srgb, var(--mx-site-text, #111318) 12%, transparent)",
+    "accent": "var(--mx-site-primary, #2563eb)",
+    "accentInk": "color-mix(in srgb, var(--mx-site-primary, #2563eb) 70%, var(--mx-site-text, #111318))",
+    "accentText": "var(--mx-site-primary-contrast, #ffffff)",
+    "vurguBg": "var(--mx-site-primary, #2563eb)",
+    "vurguText": "var(--mx-site-primary-contrast, #ffffff)",
+    "bgcolor": "var(--mx-site-surface, #f6f7f9)",
+    "color": "var(--mx-site-text, #111318)"
+  },
+  "data": [],
+  "veri": {
+    "statik": true,
+    "dinamik": false,
+    "kaynak": "desing",
+    "alanlar": {
+      "ikon": "Material Symbols adı (kanal türü ikondan da anlaşılır: mail · call · location_on · schedule)",
+      "deger": "dil sözlüğü (görünen değer, zorunlu; eski `text`)",
+      "url": "bağlantı (boşsa e-posta/telefon/haritadan türetilir)",
+      "baslik": "dil sözlüğü (kanal etiketi)"
+    }
+  }
+}
