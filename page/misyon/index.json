@@ -3,17 +3,23 @@
   "name": {
     "tr": "Misyon",
     "en": "Mission",
-    "ar": "المهمة"
+    "ar": "المهمة",
+    "de": "Mission",
+    "ru": "Миссия"
   },
   "description": {
     "tr": "Misyonumuz",
     "en": "Our mission",
-    "ar": "مهمتنا"
+    "ar": "مهمتنا",
+    "de": "Unsere Mission",
+    "ru": "Наша миссия"
   },
   "keyword": {
     "tr": "Misyon",
     "en": "mission, our mission, corporate responsibility",
-    "ar": "الرسالة, رسالتنا, المسؤولية المؤسسية"
+    "ar": "الرسالة, رسالتنا, المسؤولية المؤسسية",
+    "de": "Mission",
+    "ru": "Миссия"
   },
   "path": "misyon",
   "icon": "flag",
@@ -29,12 +35,16 @@
   "text": {
     "tr": "<h2>Misyonumuz</h2>\n<p>Banyo yenilemeyi ilk formdan teslim gününe kadar haftası belli, temiz ve yazılı bir işe dönüştürmek.</p>",
     "en": "<h2>Our mission</h2>\n<p>To turn bathroom renovation into clean, written work with a known week for every step, from the first form to handover day.</p>",
-    "ar": "<h2>مهمتنا</h2>\n<p>أن نحوّل تجديد الحمّام إلى عمل نظيف وموثّق، لكل خطوة فيه أسبوع معلوم، من النموذج الأول حتى يوم التسليم.</p>"
+    "ar": "<h2>مهمتنا</h2>\n<p>أن نحوّل تجديد الحمّام إلى عمل نظيف وموثّق، لكل خطوة فيه أسبوع معلوم، من النموذج الأول حتى يوم التسليم.</p>",
+    "de": "<h2>Unsere Mission</h2>\n<p>Badezimmerrenovierung von der ersten Anfrage bis zum Übergabetag in einen sauberen, schriftlich fixierten Prozess mit fester Wochenplanung zu verwandeln.</p>",
+    "ru": "<h2>Наша миссия</h2>\n<p>Превратить ремонт ванной из первой заявки до дня сдачи в чистый, задокументированный процесс с фиксированной недельной планировкой.</p>"
   },
   "title": {
     "tr": "Misyon",
     "en": "Mission",
-    "ar": "المهمة"
+    "ar": "المهمة",
+    "de": "Mission",
+    "ru": "Миссия"
   },
   "date": "2026-11-16T20:21:37.960Z",
   "update": "2026-11-16T20:41:27.217Z",

@@ -2,7 +2,9 @@
   "name": {
     "tr": "Teklif",
     "en": "Quote",
-    "ar": "العرض"
+    "ar": "العرض",
+    "de": "Angebot",
+    "ru": "Заявка"
   },
   "status": "play",
   "category": "",
@@ -23,7 +25,9 @@
   "description": {
     "tr": "Üç adımlı teklif formu, adres ve atölye saatleri.",
     "en": "A three-step quote form, address and workshop hours.",
-    "ar": "نموذج عرض من ثلاث خطوات والعنوان وساعات الورشة."
+    "ar": "نموذج عرض من ثلاث خطوات والعنوان وساعات الورشة.",
+    "de": "Dreistufiges Angebotsformular, Adresse und Werkstattzeiten.",
+    "ru": "Трехэтапная форма запроса предложения, адрес и часы работы мастерской."
   },
   "spot": {
     "tr": "",
@@ -34,12 +38,16 @@
   "title": {
     "tr": "Teklif",
     "en": "Quote",
-    "ar": "العرض"
+    "ar": "العرض",
+    "de": "Angebot",
+    "ru": "Заявка"
   },
   "keyword": {
     "tr": "teklif, iletişim",
     "en": "quote, contact",
-    "ar": "عرض سعر، اتصال"
+    "ar": "عرض سعر، اتصال",
+    "de": "Angebot, Kontakt",
+    "ru": "предложение, контакты"
   },
   "text": {},
   "update": "2026-11-16T20:41:27.212Z",

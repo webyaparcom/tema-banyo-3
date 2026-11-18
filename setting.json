@@ -4,12 +4,16 @@
   "description": {
     "tr": "Duru Banyo: Eskişehir’de banyo yenileme — üç adımlı teklif formu, haftalık iş takvimi, kat planına göre banyo tipi ve proje arşivi. Demo site; içerik kurgusaldır.",
     "en": "Duru Bathrooms: bathroom renovation in Eskisehir — a three-step quote form, a weekly work schedule, bathroom types by floor plan and a project archive. Demo site; content is fictional.",
-    "ar": "دورو للحمّامات: تجديد الحمّامات في إسكي شهير — نموذج عرض سعر من ثلاث خطوات وجدول عمل أسبوعي وأنواع الحمّامات حسب المخطط وأرشيف المشاريع. موقع تجريبي؛ المحتوى افتراضي."
+    "ar": "دورو للحمّامات: تجديد الحمّامات في إسكي شهير — نموذج عرض سعر من ثلاث خطوات وجدول عمل أسبوعي وأنواع الحمّامات حسب المخطط وأرشيف المشاريع. موقع تجريبي؛ المحتوى افتراضي.",
+    "de": "Duru Banyo: Badsanierung in Eskişehir — dreistufiges Angebotsformular, Wochenplan, Badtyp nach Grundriss und Projektarchiv. Demo-Website; die Inhalte sind fiktiv.",
+    "ru": "Duru Banyo: ремонт ванных комнат в Эскишехире — трёхшаговая форма предложения, недельный график работ, тип ванной по плану этажа и архив проектов. Демо-сайт; содержание вымышленное."
   },
   "keyword": {
     "tr": "banyo yenileme, banyo teklifi, duş alanı, seramik, tesisat, Eskişehir",
     "en": "bathroom renovation, bathroom quote, shower area, tiling, plumbing, Eskisehir",
-    "ar": "تجديد الحمّام، عرض سعر للحمّام، منطقة الدش، بلاط، تمديدات صحية، إسكي شهير"
+    "ar": "تجديد الحمّام، عرض سعر للحمّام، منطقة الدش، بلاط، تمديدات صحية، إسكي شهير",
+    "de": "Badsanierung, Angebot fürs Bad, Duschbereich, Keramik, Installation, Eskişehir",
+    "ru": "обновление ванной, предложение по ванной, душевая зона, керамика, сантехника, Эскишехир"
   },
   "category": "Kurumsal",
   "name": "Duru Banyo",
@@ -18,15 +22,27 @@
     "tr": true,
     "en": true,
     "ar": true,
-    "de": false,
-    "ru": false,
+    "de": true,
+    "ru": true,
     "es": false,
     "fr": false,
     "it": false,
     "ja": false,
     "zh": false,
     "ko": false,
-    "pt": false
+    "pt": false,
+    "fa": false,
+    "he": false,
+    "ur": false,
+    "nl": false,
+    "pl": false,
+    "uk": false,
+    "az": false,
+    "ka": false,
+    "el": false,
+    "bg": false,
+    "ro": false,
+    "hi": false
   },
   "logo": "logo.png",
   "multi": false,

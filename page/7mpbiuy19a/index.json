@@ -3,17 +3,23 @@
   "name": {
     "tr": "Süreç",
     "en": "Process",
-    "ar": "العملية"
+    "ar": "العملية",
+    "de": "Prozess",
+    "ru": "Процесс"
   },
   "description": {
     "tr": "Haftalık iş takvimi ve kat planına göre banyo tipleri.",
     "en": "The weekly work schedule and bathroom types by floor plan.",
-    "ar": "جدول العمل الأسبوعي وأنواع الحمّامات حسب المخطط."
+    "ar": "جدول العمل الأسبوعي وأنواع الحمّامات حسب المخطط.",
+    "de": "Wöchentlicher Arbeitsplan und Badtypen nach Grundriss.",
+    "ru": "Еженедельный график работ и типы ванных по планировке."
   },
   "keyword": {
     "tr": "Süreç",
     "en": "Process",
-    "ar": "العملية"
+    "ar": "العملية",
+    "de": "Prozess",
+    "ru": "Процесс"
   },
   "path": "hizmetler",
   "icon": "event_note",
@@ -33,7 +39,9 @@
   "title": {
     "tr": "Süreç",
     "en": "Process",
-    "ar": "العملية"
+    "ar": "العملية",
+    "de": "Prozess",
+    "ru": "Процесс"
   },
   "date": "2026-11-16T20:21:38.133Z",
   "update": "2026-11-16T20:41:27.201Z"
