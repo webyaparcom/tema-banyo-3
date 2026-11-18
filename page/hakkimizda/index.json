@@ -2,7 +2,9 @@
   "name": {
     "tr": "Atölye",
     "en": "Workshop",
-    "ar": "الورشة"
+    "ar": "الورشة",
+    "de": "Workshop",
+    "ru": "Воркшоп"
   },
   "status": "play",
   "category": "",
@@ -23,7 +25,9 @@
   "description": {
     "tr": "Atölyenin katman katman tarihi ve seçili projeler.",
     "en": "The workshop’s history in layers and selected projects.",
-    "ar": "تاريخ الورشة طبقةً طبقة ومشاريع مختارة."
+    "ar": "تاريخ الورشة طبقةً طبقة ومشاريع مختارة.",
+    "de": "Die Geschichte der Werkstatt in Schichten und ausgewählte Projekte.",
+    "ru": "История мастерской слоями и избранные проекты."
   },
   "spot": {
     "tr": "",
@@ -34,12 +38,16 @@
   "title": {
     "tr": "Atölye",
     "en": "Workshop",
-    "ar": "الورشة"
+    "ar": "الورشة",
+    "de": "Workshop",
+    "ru": "Воркшоп"
   },
   "keyword": {
     "tr": "hakkımızda",
     "en": "about",
-    "ar": "من نحن"
+    "ar": "من نحن",
+    "de": "Über uns",
+    "ru": "О нас"
   },
   "text": {},
   "update": "2026-11-16T20:41:27.204Z",

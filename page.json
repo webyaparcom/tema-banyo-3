@@ -5,12 +5,16 @@
       "name": {
         "tr": "Süreç",
         "en": "Process",
-        "ar": "العملية"
+        "ar": "العملية",
+        "de": "Prozess",
+        "ru": "Процесс"
       },
       "description": {
         "tr": "Haftalık iş takvimi ve kat planına göre banyo tipleri.",
         "en": "The weekly work schedule and bathroom types by floor plan.",
-        "ar": "جدول العمل الأسبوعي وأنواع الحمّامات حسب المخطط."
+        "ar": "جدول العمل الأسبوعي وأنواع الحمّامات حسب المخطط.",
+        "de": "Wöchentlicher Arbeitsplan und Badtypen nach Grundriss.",
+        "ru": "Еженедельный график работ и типы ванных по планировке."
       },
       "path": "hizmetler",
       "icon": "event_note",
@@ -30,7 +34,9 @@
       "name": {
         "tr": "Atölye",
         "en": "Workshop",
-        "ar": "الورشة"
+        "ar": "الورشة",
+        "de": "Workshop",
+        "ru": "Воркшоп"
       },
       "status": "play",
       "id": "hakkimizda",
@@ -51,7 +57,9 @@
       "description": {
         "tr": "Atölyenin katman katman tarihi ve seçili projeler.",
         "en": "The workshop’s history in layers and selected projects.",
-        "ar": "تاريخ الورشة طبقةً طبقة ومشاريع مختارة."
+        "ar": "تاريخ الورشة طبقةً طبقة ومشاريع مختارة.",
+        "de": "Die Geschichte der Werkstatt in Schichten und ausgewählte Projekte.",
+        "ru": "История мастерской слоями и избранные проекты."
       }
     },
     {
@@ -59,12 +67,16 @@
       "name": {
         "tr": "Projeler",
         "en": "Projects",
-        "ar": "المشاريع"
+        "ar": "المشاريع",
+        "de": "Projekte",
+        "ru": "Проекты"
       },
       "description": {
         "tr": "Çizimden teslime proje arşivi; görseller temsilîdir.",
         "en": "A project archive from drawing to handover; images are representative.",
-        "ar": "أرشيف المشاريع من الرسم إلى التسليم؛ الصور تمثيلية."
+        "ar": "أرشيف المشاريع من الرسم إلى التسليم؛ الصور تمثيلية.",
+        "de": "Projektarchiv von der Zeichnung bis zur Übergabe; Bilder sind repräsentativ.",
+        "ru": "Архив проектов от чертежа до сдачи; изображения иллюстративные."
       },
       "path": "referanslar",
       "icon": "photo_library",
@@ -84,7 +96,9 @@
       "name": {
         "tr": "Teklif",
         "en": "Quote",
-        "ar": "العرض"
+        "ar": "العرض",
+        "de": "Angebot",
+        "ru": "Заявка"
       },
       "status": "play",
       "id": "iletisim",
@@ -105,7 +119,9 @@
       "description": {
         "tr": "Üç adımlı teklif formu, adres ve atölye saatleri.",
         "en": "A three-step quote form, address and workshop hours.",
-        "ar": "نموذج عرض من ثلاث خطوات والعنوان وساعات الورشة."
+        "ar": "نموذج عرض من ثلاث خطوات والعنوان وساعات الورشة.",
+        "de": "Dreistufiges Angebotsformular, Adresse und Werkstattzeiten.",
+        "ru": "Трехэтапная форма запроса предложения, адрес и часы работы мастерской."
       }
     }
   ],

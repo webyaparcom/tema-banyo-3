@@ -3,17 +3,23 @@
   "name": {
     "tr": "Projeler",
     "en": "Projects",
-    "ar": "المشاريع"
+    "ar": "المشاريع",
+    "de": "Projekte",
+    "ru": "Проекты"
   },
   "description": {
     "tr": "Çizimden teslime proje arşivi; görseller temsilîdir.",
     "en": "A project archive from drawing to handover; images are representative.",
-    "ar": "أرشيف المشاريع من الرسم إلى التسليم؛ الصور تمثيلية."
+    "ar": "أرشيف المشاريع من الرسم إلى التسليم؛ الصور تمثيلية.",
+    "de": "Projektarchiv von der Zeichnung bis zur Übergabe; Bilder sind repräsentativ.",
+    "ru": "Архив проектов от чертежа до сдачи; изображения иллюстративные."
   },
   "keyword": {
     "tr": "proje, banyo yenileme",
     "en": "project, bathroom renovation",
-    "ar": "مشروع، تجديد حمّام"
+    "ar": "مشروع، تجديد حمّام",
+    "de": "Projekt, Badsanierung",
+    "ru": "проект, ремонт ванной"
   },
   "path": "referanslar",
   "icon": "photo_library",
@@ -33,7 +39,9 @@
   "title": {
     "tr": "Projeler",
     "en": "Projects",
-    "ar": "المشاريع"
+    "ar": "المشاريع",
+    "de": "Projekte",
+    "ru": "Проекты"
   },
   "date": "2026-11-16T20:21:38.144Z",
   "update": "2026-11-16T20:41:27.208Z"
